@@ -1,1 +1,36 @@
-<p>reset-pass works!</p>
+<div fxLayout="column">
+	<mat-toolbar color="primary" class="container-1">
+		<div fxLayout="column" class="header">
+			<img
+			class="logo"
+			src="assets/padlock.svg">
+			<h1>Nueva contraseña</h1>
+		</div>
+	</mat-toolbar>
+	<div class="container-2">
+		<div [formGroup]="resetPassForm" fxLayout="column" fxFlex="40">
+			<p>Ingrese su nueva contraseña</p>
+			<mat-form-field>
+				<mat-label>Contraseña</mat-label>
+				<input
+				[type]="hide ? 'password' : 'text'"  
+				formControlName="password" 
+				type="password" 
+				matInput>
+				<mat-icon
+				[matTooltip]="hide ? 'Mostrar contraseña' : 'Ocultar contraseña'"
+				style="cursor: pointer;" 
+				(click)="hide = !hide" matSuffix>
+					{{hide ? 'visibility_off' : 'visibility'}}
+				</mat-icon>
+				<mat-error *ngIf="resetPassForm['controls'].password.hasError('required')">La contraseña es requerida</mat-error>
+			</mat-form-field>
+				<button 
+				mat-raised-button color="primary"
+				[disabled]="!resetPassForm.valid"
+				>
+				Guardar
+			</button>
+	</div>
+</div>
+</div>

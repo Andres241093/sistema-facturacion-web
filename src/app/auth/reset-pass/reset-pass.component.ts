@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-reset-pass',
-  templateUrl: './reset-pass.component.html',
-  styleUrls: ['./reset-pass.component.scss']
+	selector: 'app-reset-pass',
+	templateUrl: './reset-pass.component.html',
+	styleUrls: ['./reset-pass.component.scss']
 })
 export class ResetPassComponent implements OnInit {
 
-  constructor() { }
+	hide: boolean = true;
 
-  ngOnInit(): void {
-  }
+	resetPassForm = new FormGroup({
+		password: new FormControl('',[Validators.required])
+	});
+
+	constructor() { }
+
+	ngOnInit(): void {
+	}
 
 }

@@ -1,1 +1,32 @@
-<p>recovery-pass works!</p>
+<div fxLayout="column">
+	<mat-toolbar color="primary" class="container-1">
+		<div fxLayout="column" class="header">
+			<img
+			class="logo"
+			src="assets/bill.svg">
+			<h1>Recuperar contraseña</h1>
+		</div>
+	</mat-toolbar>
+	<div class="container-2">
+		<div [formGroup]="recoveryPassForm" fxLayout="column" fxFlex="40">
+			<p>Le enviaremos a su correo un enlace para restablecer su contraseña</p>
+			<mat-form-field>
+				<mat-label>Correo</mat-label>
+				<input 
+				formControlName="mail" 
+				matInput>
+				<mat-error 
+				*ngIf="recoveryPassForm['controls'].mail.hasError('required')">El correo es requerido</mat-error>
+				<mat-error 
+				*ngIf="recoveryPassForm['controls'].mail.hasError('email')">Ingrese un correo válido</mat-error>
+			</mat-form-field>
+				<button 
+				mat-raised-button color="primary"
+				[disabled]="!recoveryPassForm.valid"
+				>
+				Enviar correo
+				<mat-icon>send</mat-icon>
+			</button>
+	</div>
+</div>
+</div>
