@@ -1,0 +1,77 @@
+<div fxLayout="column">
+	<app-body-header [config]="configBodyHeader"></app-body-header>
+		<div
+		style="margin: 5% 25% 0% 25%;" 
+		[formGroup]="createForm" 
+		fxLayout="column" 
+		fxFlex="40">
+			<mat-form-field appearance="outline">
+				<mat-label>Nombre</mat-label>
+				<input 
+				formControlName="name" 
+				matInput>
+				<mat-error 
+				*ngIf="createForm['controls'].name.hasError('required')">El nombre es requerido</mat-error>
+			</mat-form-field>
+			<mat-form-field appearance="outline">
+				<mat-label>Correo</mat-label>
+				<input 
+				formControlName="mail" 
+				matInput>
+				<mat-error 
+				*ngIf="createForm['controls'].mail.hasError('required')">El correo es requerido</mat-error>
+				<mat-error 
+				*ngIf="createForm['controls'].mail.hasError('email')">Ingrese un correo válido</mat-error>
+			</mat-form-field>
+			<mat-form-field appearance="outline">
+			    <mat-label>Tipo de usuario</mat-label>
+			    <mat-select>
+			      <mat-option>
+			        Administrador
+			      </mat-option>
+			      <mat-option>
+			        Empleado
+			      </mat-option>
+			    </mat-select>
+			  </mat-form-field>
+			<mat-form-field appearance="outline">
+				<mat-label>Cédula</mat-label>
+				<input 
+				formControlName="dni" 
+				matInput>
+				<mat-error 
+				*ngIf="createForm['controls'].dni.hasError('required')">La cédula es requerido</mat-error>
+			</mat-form-field>
+			<mat-form-field appearance="outline">
+				<mat-label>Teléfono</mat-label>
+				<input 
+				formControlName="phone" 
+				matInput>
+				<mat-error 
+				*ngIf="createForm['controls'].phone.hasError('required')">El teléfono es requerido</mat-error>
+			</mat-form-field>
+			<mat-form-field appearance="outline">
+				<mat-label>Contraseña</mat-label>
+				<input
+				[type]="hide ? 'password' : 'text'"  
+				formControlName="password" 
+				type="password" 
+				matInput>
+				<mat-icon
+				[matTooltip]="hide ? 'Mostrar contraseña' : 'Ocultar contraseña'"
+				style="cursor: pointer;" 
+				(click)="hide = !hide" matSuffix>
+					{{hide ? 'visibility_off' : 'visibility'}}
+				</mat-icon>
+				<mat-error *ngIf="createForm['controls'].password.hasError('required')">La contraseña es requerida</mat-error>
+			</mat-form-field>
+			<div fxLayout="column" fxLayoutGap="20px">
+				<button 
+				mat-raised-button color="primary"
+				[disabled]="!createForm.valid"
+				>
+				Guardar
+			</button>
+		</div>
+	</div>
+</div>

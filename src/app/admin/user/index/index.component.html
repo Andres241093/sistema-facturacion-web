@@ -1,0 +1,46 @@
+<div fxLayout="column">
+	<app-body-header [config]="configBodyHeader"></app-body-header>
+	<div class="container-2">
+		<div 
+		fxFlex="100"
+		fxLayout="row" 
+		fxLayoutGap="20px"
+		style="justify-content: center">
+		<mat-card 
+		fxLayout="column"
+		fxLayoutGap="10px"
+		class="mat-elevation-z5">
+			<!-- USERS LIST -->
+			  <mat-form-field style="   
+			   width: max-content;
+    		   margin-left: 43px;"
+    		   appearance="outline">
+			    <mat-label>Tipo de usuario</mat-label>
+			    <mat-select>
+			      <mat-option>
+			        Administradores
+			      </mat-option>
+			      <mat-option>
+			        Empleados
+			      </mat-option>
+			    </mat-select>
+			  </mat-form-field>
+				<div 
+				fxLayout="row wrap"
+				fxLayout.lt-sm="column"
+				fxLayout.lt-md="column"  
+				fxLayoutGap="10px"
+				fxLayoutAlign="center center">
+				  <div 
+				  *ngFor="let element of array">
+						  <app-user-card fxFlex></app-user-card>
+				  </div>
+				</div>
+			<mat-paginator [length]="100"
+		             [pageSize]="10"
+		             [pageSizeOptions]="[5, 10, 25, 100]">
+			</mat-paginator>
+		</mat-card>
+	</div>
+</div>
+</div>

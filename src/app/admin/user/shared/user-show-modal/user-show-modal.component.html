@@ -1,0 +1,97 @@
+<!-- USER DETAILS -->
+<mat-card>
+	<mat-toolbar 
+	fxLayout="column"
+	color="primary"
+	style="
+	margin: -40px;
+    width: 139.5%;
+	border-radius: 4px;
+	height: 20vh;">
+	<div style="position: absolute;right: -20px;">
+		<button 
+		mat-icon-button 
+		[matMenuTriggerFor]="menu">
+		<mat-icon>more_vert</mat-icon>
+	</button>
+	<mat-menu #menu="matMenu">
+		<button
+		mat-dialog-close  
+		mat-menu-item
+		[routerLink]="'/admin/users/update'">
+			<mat-icon>edit</mat-icon>
+			Editar
+		</button>
+		<button 
+		mat-dialog-close 
+		mat-menu-item
+		(click)="openDeleteDialog()">
+			<mat-icon>delete</mat-icon>
+			Eliminar
+		</button>
+	</mat-menu>
+</div>
+<div fxLayout="row" style="margin-top: 40px;width: 100%">
+	<div
+	fxLayout="column" 
+	fxFlex="70" 
+	fxLayoutAlign="center center">
+	<span>Andrés Ucero</span>
+	<div
+	fxLayout="row"
+	style="font-size: small;"
+	>
+	<span>Admin</span>
+	<mat-icon style="
+	margin: 11px -6px 0px 8px;
+	font-size: 8px;
+	margin-bottom: -15px;">lens</mat-icon>
+	<span>Verificado</span>
+</div>
+</div>
+<div fxFkex="30">
+	<img
+	style="width: 70px;" 
+	src="assets/user_male.svg">
+</div>
+</div>
+</mat-toolbar>
+</mat-card>
+<div>
+	<div 
+	style="margin-top: 40px;" 
+	fxLayout="column" 
+	fxLayoutAlign="center start">
+		<div fxLayout="row" fxLayoutGap="10px">
+			<div>
+				<mat-icon>mail</mat-icon>
+			</div>
+			<div>
+				andresucero241093@gmail.com
+			</div>
+		</div>
+		<div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="none center">
+			<div>
+				<mat-icon>assignment_ind</mat-icon>
+			</div>
+			<div>
+				V22616688
+			</div>
+		</div>
+		<div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="none center">
+			<div>
+				<mat-icon>phone</mat-icon>
+			</div>
+			<div>
+				0412-464-3188
+			</div>
+		</div>
+		<button
+		style="
+		margin-top: 10px;
+		width: 100%;"
+		mat-raised-button
+		mat-dialog-close 
+		color="primary">Cerrar</button>
+	</div>
+</div>

@@ -1,0 +1,53 @@
+<app-header [sidenav]="side"></app-header>
+<mat-sidenav-container style="z-index: 0;">
+	<mat-sidenav 
+	#side [mode]="'over'" 
+	style="margin-top: 45px;">
+		<mat-toolbar
+		style="height: 20vh;" 
+		color="primary">
+			<div
+			fxLayout="column" 
+			style="
+			margin-top: 14px;
+			font-size: small;">
+				<div>
+					<img style="width: 50px;" src="{{header.iconPath}}">
+				</div>
+				<div
+				fxLayout="column" 
+				fxLayoutGap="-16px"
+				style="margin-top: 10px;">
+					<span>{{header.mail}}</span>
+					<span>{{header.role}}</span>
+				</div>
+			</div>
+		</mat-toolbar>
+		<mat-selection-list
+		role="list" 
+		[multiple]="false"
+		>
+			<!-- OPTIONS LIST -->
+			<div>
+			  <mat-list-option 
+			  *ngFor="let option of ADMIN_SIDENAV"
+			  role="listitem">
+			  	<mat-icon mat-list-icon>{{option.matIcon}}</mat-icon>
+				<span>{{option.name}}</span>
+			  </mat-list-option>
+			</div>
+			<mat-divider></mat-divider>
+			<div>
+			  <mat-list-option role="listitem">
+			  	<mat-icon mat-list-icon>exit_to_app</mat-icon>
+				<span>Cerrar sesión</span>
+			  </mat-list-option>
+			</div>
+		</mat-selection-list>
+
+	</mat-sidenav>
+
+	<mat-sidenav-content style="margin-bottom: 10px;">
+		<ng-content></ng-content>
+	</mat-sidenav-content>
+</mat-sidenav-container>

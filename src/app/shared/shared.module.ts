@@ -6,7 +6,8 @@ import { RouterModule } from '@angular/router';
 
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { BodyHeaderComponent } from './body-header/body-header.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 const modules: Array<any> =[
 	MaterialModule,
@@ -17,7 +18,8 @@ const modules: Array<any> =[
 const components: Array<any> =[
   FooterComponent, 
   HeaderComponent, 
-  SidebarComponent
+  BodyHeaderComponent,
+  SidenavComponent
 ];
 
 @NgModule({

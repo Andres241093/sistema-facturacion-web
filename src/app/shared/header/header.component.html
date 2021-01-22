@@ -1,5 +1,5 @@
 <mat-toolbar color="primary" class="mat-elevation-z8 header">
-	<div fxFlex="100" style="display: flex;justify-content: flex-end;">
+<!-- 	<div fxFlex="100" style="display: flex;justify-content: flex-end;">
 		<button 
 		*ngIf="checkLoginRoute()"
 		mat-stroked-button [routerLink]="'/auth/sign-up'">
@@ -9,6 +9,11 @@
 		*ngIf="!checkLoginRoute()"
 		mat-stroked-button [routerLink]="'/auth/login'">
 			Iniciar sesión
+		</button>
+	</div> -->
+	<div>
+		<button mat-icon-button (click)="sidenav.toggle()">
+			<mat-icon>reorder</mat-icon>
 		</button>
 	</div>
 </mat-toolbar>

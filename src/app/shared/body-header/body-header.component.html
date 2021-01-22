@@ -1,0 +1,55 @@
+	<mat-toolbar color="primary" class="container-1">
+		<div class="header">
+			<div
+			fxLayout="row" 
+			fxLayoutGap="5px"
+			fxLayoutAlign="start end"
+			fxHide.lt-sm="true"
+			style="
+			margin-left: 60px;
+			margin-top: 80px;" 
+			>
+				<span style="font-size: x-large;">{{config.title}}</span>
+				<span *ngIf="config.subtitle.show" style="font-size: initial;">{{config.subtitle.larger}}</span>
+			</div>
+			<div 
+			fxLayout="column"  
+			fxLayoutGap="5px"
+			fxLayoutAlign="start start"
+			fxHide="true" 
+			fxHide.lt-sm="false" 
+			style="
+			margin-top: 40px;" 
+			>
+				<span style="font-size: x-large;">{{config.title}}</span>
+				<span *ngIf="config.subtitle.show" style="font-size: initial;">{{config.subtitle.small}}</span>
+			</div>
+		</div>
+		<div *ngIf="config.button.show">
+			<div
+			fxHide.lt-sm="true"
+			style="position: absolute;
+	   			   right: 20%;
+	    		   top: 112px;">
+				<button
+				[routerLink]="[config.button.routerLink]" 
+				[matTooltip]="config.button.tooltip"
+				mat-fab color="basic">
+					<mat-icon>{{config.button.matIcon}}</mat-icon>
+				</button>
+			</div>
+			<div
+			fxHide="true" 
+			fxHide.lt-sm="false" 
+			style="position: absolute;
+	   			   right: 20%;
+	    		   top: 17%;">
+				<button
+				[routerLink]="[config.button.routerLink]"
+				[matTooltip]="config.button.tooltip"
+				mat-mini-fab color="basic">
+					<mat-icon>{{config.button.matIcon}}</mat-icon>
+				</button>
+			</div>
+		</div>
+	</mat-toolbar>

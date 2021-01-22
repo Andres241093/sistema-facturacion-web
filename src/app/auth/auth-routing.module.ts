@@ -22,8 +22,7 @@ const routes: Routes = [
 	{
 		component: SignUpComponent,
 		path: 'sign-up'
-	},
-	{ path:'**', redirectTo: 'login' }
+	}
 ];
 
 @NgModule({

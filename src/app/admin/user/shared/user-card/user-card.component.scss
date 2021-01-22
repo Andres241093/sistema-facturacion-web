@@ -1,0 +1,10 @@
+.mat-card{
+	cursor: pointer;
+}
+.mat-card:hover{
+	transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}
+.mat-card:active{
+	transform: translateY(0px);
+}

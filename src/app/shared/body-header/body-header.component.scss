@@ -1,0 +1,26 @@
+.container-1{
+	height: 20vh;
+}
+.header{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+.container-2{
+	height: 75vh;
+	margin-top: 5%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.forgot-pass{
+	margin-top: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.logo{
+	display: block;
+	margin: auto;
+	width: 100px;
+}
