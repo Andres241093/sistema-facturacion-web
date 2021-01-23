@@ -4,27 +4,39 @@
 		<div 
 		fxFlex="100"
 		fxLayout="row" 
-		fxLayoutGap="20px"
+		fxLayoutGap="10px"
 		style="justify-content: center">
 		<mat-card 
 		fxLayout="column"
 		fxLayoutGap="10px"
 		class="mat-elevation-z5">
 			<!-- USERS LIST -->
-			  <mat-form-field style="   
-			   width: max-content;
-    		   margin-left: 43px;"
-    		   appearance="outline">
-			    <mat-label>Tipo de usuario</mat-label>
-			    <mat-select>
-			      <mat-option>
-			        Administradores
-			      </mat-option>
-			      <mat-option>
-			        Empleados
-			      </mat-option>
-			    </mat-select>
-			  </mat-form-field>
+			<div fxFlex="20" fxFlex.lt-sm="30"class="search-options">
+				<div
+				fxLayout="row"
+				fxLayout.lt-sm="column"
+				fxLayoutGap="10px">
+				<!-- SEARCH BAR -->
+				<app-search-bar
+				[config]="searchBarConfig" 
+				fxFlex="70"
+				fxFlex.lt-sm="100"></app-search-bar>
+				  	<mat-form-field
+				  	fxFlex="20"
+				  	fxFlex.lt-sm="100"
+		    		   appearance="outline">
+					    <mat-label>Tipo de usuario</mat-label>
+					    <mat-select>
+					      <mat-option>
+					        Administradores
+					      </mat-option>
+					      <mat-option>
+					        Empleados
+					      </mat-option>
+					    </mat-select>
+					  </mat-form-field>
+				</div>
+			</div>
 				<div 
 				fxLayout="row wrap"
 				fxLayout.lt-sm="column"

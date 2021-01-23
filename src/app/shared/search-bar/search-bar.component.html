@@ -1,0 +1,28 @@
+<mat-form-field
+[formGroup]="searchForm"
+style="width: 100%;"
+appearance="outline">
+	<mat-label>Buscar</mat-label>
+	<input
+	formControlName="search"
+	(keyup.enter)="search($event)" 
+	matInput>
+	<mat-hint>Ingrese un valor en el campo de búsqueda y presione 'Enter' para buscar</mat-hint>
+
+<button
+matSuffix 
+mat-icon-button
+[matMenuTriggerFor]="menu">
+	<mat-icon>more_vert</mat-icon>
+</button>
+	<mat-menu #menu="matMenu">
+		<div *ngFor="let item of config.filters">
+			<button
+				(click)="onSelectFilter(item.name)"
+				mat-menu-item>
+				<mat-icon *ngIf="item.selected">check</mat-icon>
+				{{item.name}}
+			</button>
+		</div>
+	</mat-menu>
+</mat-form-field>

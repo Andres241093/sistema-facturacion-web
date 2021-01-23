@@ -9,7 +9,7 @@
 	</mat-toolbar>
 	<div class="container-2">
 		<div [formGroup]="loginForm" fxLayout="column" fxFlex="40">
-			<mat-form-field>
+			<mat-form-field appearance="outline">
 				<mat-label>Correo</mat-label>
 				<input 
 				formControlName="mail" 
@@ -19,7 +19,7 @@
 				<mat-error 
 				*ngIf="loginForm['controls'].mail.hasError('email')">Ingrese un correo válido</mat-error>
 			</mat-form-field>
-			<mat-form-field>
+			<mat-form-field appearance="outline">
 				<mat-label>Contraseña</mat-label>
 				<input
 				[type]="hide ? 'password' : 'text'"  

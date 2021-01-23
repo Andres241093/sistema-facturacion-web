@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
 	selector: 'app-index',
@@ -10,12 +9,8 @@ export class IndexComponent implements OnInit {
 
 	hide: boolean = true;
 	configBodyHeader: any;
+	searchBarConfig: any;
 	array: Array<any> = [1,2,3,4,5,6,7,8,9];
-
-	loginForm = new FormGroup({
-		mail: new FormControl('',[Validators.required,Validators.email]),
-		password: new FormControl('',[Validators.required]),
-	});
 
 	constructor() { 
 		this.configBodyHeader = {
@@ -31,6 +26,19 @@ export class IndexComponent implements OnInit {
 				"routerLink": "/admin/users/create",
 				"tooltip": "Nuevo usuario"
 			}
+		};
+
+		this.searchBarConfig = {
+			"filters": [
+			{
+				'name': 'Nombre',
+				'selected': true
+			},
+			{
+				'name': 'Cédula',
+				'selected': false
+			}
+			]
 		};
 	}
 
