@@ -1,1 +1,43 @@
-<p>user-delete-modal works!</p>
+<!-- <mat-card> -->
+	<mat-toolbar 
+	fxLayout="column"
+	color="warn"
+	style="
+	margin: -25px 0px 0px -25px;
+	height: 0%;
+    width: 120.4%;">
+	<div fxLayout="row" style="margin-top: 40px;width: 100%">
+		<div
+		fxLayout="column" 
+		fxFlex="70" 
+		fxLayoutAlign="center center">
+			<span style="margin-left: 10px;">Eliminar usuario</span>
+		</div>
+	</div>
+</mat-toolbar>
+<!-- </mat-card> -->
+<div fxLayout="column">
+	<div 
+	style="margin-top: 40px;" 
+	fxLayout="column" 
+	fxFlex="100"
+	fxLayoutAlign="center strech">
+			<p>
+				Estás a punto de eliminar un usuario,
+			</p>
+			<p>
+				¿Estás seguro de realizar esta acción?
+			</p>
+			<div fxLayout="row" fxFlex="100" fxLayoutGap="5px">
+			<button
+			fxFlex="50"
+			mat-raised-button
+			mat-dialog-close>No</button>
+			<button
+			fxFlex="50"
+			mat-raised-button
+			mat-dialog-close 
+			color="warn">Sí</button>
+			</div>
+	</div>
+</div>

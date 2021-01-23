@@ -1,0 +1,25 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { CategoryUpdateModalComponent } from './category-update-modal.component';
+
+describe('CategoryUpdateModalComponent', () => {
+  let component: CategoryUpdateModalComponent;
+  let fixture: ComponentFixture<CategoryUpdateModalComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ CategoryUpdateModalComponent ]
+    })
+    .compileComponents();
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(CategoryUpdateModalComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

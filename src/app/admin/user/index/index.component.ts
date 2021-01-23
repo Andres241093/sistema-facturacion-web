@@ -29,16 +29,8 @@ export class IndexComponent implements OnInit {
 		};
 
 		this.searchBarConfig = {
-			"filters": [
-			{
-				'name': 'Nombre',
-				'selected': true
-			},
-			{
-				'name': 'Cédula',
-				'selected': false
-			}
-			]
+			"filters": ['name','dni'],
+			"url": "soylaurl.com/admin"
 		};
 	}
 

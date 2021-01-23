@@ -11,6 +11,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatRadioModule} from '@angular/material/radio';
 
 const modules: Array<any> =[
 	MatCardModule,
@@ -23,7 +24,8 @@ const modules: Array<any> =[
   MatListModule,
   MatDividerModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatRadioModule
 ];
 
 @NgModule({

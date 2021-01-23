@@ -4,12 +4,25 @@
 	fxLayout="column"
 	color="primary"
 	style="
-	margin: -40px;
+	margin: -42.5px;
     width: 139.5%;
 	border-radius: 4px;
 	height: 20vh;">
-	<div style="position: absolute;right: -20px;">
+	<div fxLayout="row" style="position: absolute;right: -20px;">
+		<button
+		mat-dialog-close  
+		mat-icon-button
+		[routerLink]="'/admin/users/1'">
+			<mat-icon>edit</mat-icon>
+		</button>
 		<button 
+		mat-dialog-close 
+		mat-icon-button
+		(click)="openDeleteDialog()">
+			<mat-icon>delete</mat-icon>
+		</button>
+
+<!-- 		<button 
 		mat-icon-button 
 		[matMenuTriggerFor]="menu">
 		<mat-icon>more_vert</mat-icon>
@@ -18,7 +31,7 @@
 		<button
 		mat-dialog-close  
 		mat-menu-item
-		[routerLink]="'/admin/users/update'">
+		[routerLink]="'/admin/users/1'">
 			<mat-icon>edit</mat-icon>
 			Editar
 		</button>
@@ -29,9 +42,9 @@
 			<mat-icon>delete</mat-icon>
 			Eliminar
 		</button>
-	</mat-menu>
+	</mat-menu> -->
 </div>
-<div fxLayout="row" style="margin-top: 40px;width: 100%">
+<div fxLayout="row" style="margin-top: 55px;width: 100%">
 	<div
 	fxLayout="column" 
 	fxFlex="70" 
@@ -51,7 +64,7 @@
 </div>
 <div fxFkex="30">
 	<img
-	style="width: 70px;" 
+	style="width: 50px;" 
 	src="assets/user_male.svg">
 </div>
 </div>

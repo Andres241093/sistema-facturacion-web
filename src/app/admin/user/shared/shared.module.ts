@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { SharedModule as AppSharedModule } from 'src/app/shared/shared.module';
 //MATERIAL MODULES
 import {MatSelectModule} from '@angular/material/select';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatPaginatorModule, MatPaginatorIntl} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
-
+//Translation of paginator
+import { getDutchPaginatorIntl } from 'src/app/shared/material/translate-paginator';
 
 import { UserCardComponent } from './user-card/user-card.component';
 import { UserShowModalComponent } from './user-show-modal/user-show-modal.component';
@@ -30,6 +31,12 @@ const components: Array<any> =[
     CommonModule,
     modules
   ],
-  exports: [modules,components]
+  exports: [modules,components],
+  providers: [
+    { 
+      provide: MatPaginatorIntl, 
+      useValue: getDutchPaginatorIntl() 
+    }
+  ]
 })
 export class SharedModule { }

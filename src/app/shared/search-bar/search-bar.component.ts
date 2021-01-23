@@ -17,25 +17,13 @@ export class SearchBarComponent implements OnInit {
 
 	constructor() { }
 
-	onSelectFilter(filter: string)
-	{
-		this.filter = filter;
-		for(let i of this.config.filters)
-		{
-			i.selected = false;
-			if(i.name === this.filter)
-			{
-				i.selected = true;
-			}
-		} 
-	}
-
 	search(e: any)
 	{
-		let query = {
-			"value": this.searchForm.value.search,
-			"filter": this.filter
-		};
+		let query = this.config.url+'?';
+		for(let filter of this.config.filters)
+		{
+			query += filter === this.config.filters[this.config.filters.length-1] ? filter+'='+this.searchForm.value.search : filter+'='+this.searchForm.value.search+'&';
+		}
 		console.log(query);
 	}
 
